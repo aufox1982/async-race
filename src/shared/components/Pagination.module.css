@@ -1,0 +1,13 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.info {
+  font-size: 0.875rem;
+  color: #95a5a6;
+  min-width: 90px;
+  text-align: center;
+}

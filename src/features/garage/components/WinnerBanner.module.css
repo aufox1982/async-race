@@ -1,0 +1,54 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.banner {
+  background: #1a1a2e;
+  border: 2px solid #e74c3c;
+  border-radius: 12px;
+  padding: 32px 48px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.title {
+  font-size: 2rem;
+  color: #f1c40f;
+}
+
+.car {
+  width: 120px;
+  height: 60px;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ecf0f1;
+}
+
+.time {
+  font-size: 1rem;
+  color: #95a5a6;
+}

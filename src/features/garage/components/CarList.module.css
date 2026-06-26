@@ -1,0 +1,44 @@
+.empty {
+  text-align: center;
+  padding: 48px 16px;
+  color: #7f8c8d;
+}
+
+.empty p {
+  margin-bottom: 8px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.count {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  display: inline-block;
+  background: #e74c3c;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  padding: 2px 10px;
+  font-weight: 600;
+}
+
+.pageLabel {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 12px;
+}
+
+.cars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
