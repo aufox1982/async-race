@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  gap: 2px;
+  padding: 12px 16px;
+  background: #0f0f23;
+  border-bottom: 2px solid #e74c3c;
+}
+
+.link {
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #7f8c8d;
+  transition: color 0.15s, background 0.15s;
+}
+
+.link:hover {
+  color: #ecf0f1;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* NavLink adds the 'active' class automatically */
+.link:global(.active) {
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+}

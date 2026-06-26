@@ -1,17 +1,18 @@
 import { NavLink } from 'react-router-dom';
+import styles from './Navigation.module.css';
 
 /**
  * Top-level navigation.
- * NavLink automatically adds the `active` class when the route matches,
- * which you can style in CSS.
+ * NavLink automatically applies the `active` global class when the route matches.
+ * We target it with :global(.active) in the CSS module.
  */
 function Navigation() {
   return (
-    <nav className="nav">
-      <NavLink to="/garage" className="nav__link">
+    <nav className={styles.nav}>
+      <NavLink to="/garage" className={styles.link}>
         Garage
       </NavLink>
-      <NavLink to="/winners" className="nav__link">
+      <NavLink to="/winners" className={styles.link}>
         Winners
       </NavLink>
     </nav>
