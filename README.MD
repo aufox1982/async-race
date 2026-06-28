@@ -1,3 +1,7 @@
+## Async Race
+
+**Live demo:** https://aufox1982.github.io/async-race/
+
 ## Backend
 
 This project uses the Async Race API:

@@ -1,4 +1,8 @@
+/*
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+*/
+// change this import:
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from '@/shared/components/Navigation';
 import GaragePage from '@/features/garage/GaragePage';
 import WinnersPage from '@/features/winners/WinnersPage';
@@ -10,7 +14,7 @@ import WinnersPage from '@/features/winners/WinnersPage';
  */
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navigation />
       <main>
         <Routes>
@@ -19,7 +23,7 @@ function App() {
           <Route path="*" element={<Navigate to="/garage" replace />} />
         </Routes>
       </main>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
