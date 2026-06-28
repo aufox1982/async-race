@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# Local env overrides (commit .env, not .env.local)
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode
+.idea
+*.local
