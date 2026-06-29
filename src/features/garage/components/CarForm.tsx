@@ -12,7 +12,8 @@ interface CarFormProps {
 
 function CarForm({ onCreate, onUpdate }: CarFormProps) {
   const dispatch = useAppDispatch();
-  const { createForm, editForm, selectedCar } = useAppSelector((s) => s.garage);
+  const { createForm, editForm, selectedCar, raceStatus } = useAppSelector((s) => s.garage);
+  const isRacing = raceStatus === 'racing';
 
   async function handleCreate(e: FormEvent) {
     e.preventDefault();
@@ -51,24 +52,24 @@ function CarForm({ onCreate, onUpdate }: CarFormProps) {
         <Button type="submit" variant="primary" size="sm">Create</Button>
       </form>
 
-      {/* Edit form — only active when a car is selected */}
+      {/* Edit form — only active when a car is selected and no race is running */}
       <form className={styles.form} onSubmit={(e) => void handleUpdate(e)}>
         <input
           className={styles.input}
           type="text"
-          placeholder="Select a car to edit"
+          placeholder={isRacing ? 'Race in progress…' : 'Select a car to edit'}
           value={editForm.name}
-          disabled={!selectedCar}
+          disabled={!selectedCar || isRacing}
           onChange={(e) => dispatch(setEditForm({ name: e.target.value }))}
         />
         <input
           className={styles.colorPicker}
           type="color"
           value={editForm.color}
-          disabled={!selectedCar}
+          disabled={!selectedCar || isRacing}
           onChange={(e) => dispatch(setEditForm({ color: e.target.value }))}
         />
-        <Button type="submit" variant="secondary" size="sm" disabled={!selectedCar}>
+        <Button type="submit" variant="secondary" size="sm" disabled={!selectedCar || isRacing}>
           Update
         </Button>
       </form>

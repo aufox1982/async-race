@@ -16,6 +16,10 @@ export function useRace(cars: Car[]) {
   const { engineStates, raceStatus, winnerId } = useAppSelector((s) => s.garage);
   const abortControllersRef = useRef<Map<number, AbortController>>(new Map());
   const winnerSavedRef = useRef(false);
+  // Always-current mirror of raceStatus, safe to read inside async functions
+  // after an await (avoids stale closure capturing the value at call time).
+  const raceStatusRef = useRef(raceStatus);
+  raceStatusRef.current = raceStatus;
 
   // Detect winner
   useEffect(() => {
@@ -56,6 +60,13 @@ export function useRace(cars: Car[]) {
     dispatch(setRaceStatus('racing'));
     abortControllersRef.current.clear();
     await Promise.allSettled(cars.map(startSingleCar));
+    // Edge case: all cars got a 500 (broke down) so the winner-detection
+    // useEffect never fired and raceStatus is still 'racing'. Close the race
+    // so that subsequent individual A-button presses on any page are never
+    // mis-detected as race winners. winnerId remains null → no banner shown.
+    if (raceStatusRef.current === 'racing') {
+      dispatch(setRaceStatus('finished'));
+    }
   }
 
   /** Stops all engines via API and resets Redux race state. */

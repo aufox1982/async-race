@@ -28,10 +28,12 @@ function WinnerBanner({ winner, duration, onClose }: WinnerBannerProps) {
   return createPortal(
     <div className={styles.overlay} role="dialog" aria-modal="true">
       <div className={styles.banner}>
-        <h2 className={styles.title}>🏆 Winner!</h2>
+        <p className={styles.title}>Race Winner</p>
+        <p className={styles.trophy}>🏆</p>
         <CarIcon color={winner.color} className={styles.car} />
         <p className={styles.name}>{winner.name}</p>
         <p className={styles.time}>{timeSeconds}s</p>
+        <p className={styles.timeLabel}>Finish time</p>
         <Button variant="secondary" size="sm" onClick={onClose}>
           Close
         </Button>

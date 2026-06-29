@@ -10,8 +10,8 @@ export const RANDOM_CARS_COUNT = 100;
 export const MS_PER_SECOND = 1000;
 export const TIME_DECIMAL_PLACES = 2;
 
-// Animation — matches the width set in CarRow.module.css
-export const CAR_ICON_WIDTH_PX = 80;
+// Animation — matches .carIcon width set in CarRow.module.css
+export const CAR_ICON_WIDTH_PX = 90;
 
 // Car name generation — at least 10 parts each (task requirement)
 export const CAR_BRANDS = [
