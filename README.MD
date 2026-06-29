@@ -2,7 +2,7 @@
 
 **Live demo:** https://aufox1982.github.io/async-race/
 
-**Self-estimated score: ~375/400 pts** (code quality 100 pts excluded from self-check — reviewer discretion)
+**Self-estimated score: ~392/400 pts** (code quality 100 pts excluded from self-check — reviewer discretion)
 
 ---
 
