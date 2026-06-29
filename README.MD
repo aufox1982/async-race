@@ -21,7 +21,7 @@ The server starts on `http://localhost:3000`. The frontend reads `VITE_API_URL` 
 
 ---
 
-## Checklist ~375/400 pts
+## Checklist ~392/400 pts
 
 ### 🚀 UI Deployment
 
@@ -66,7 +66,7 @@ The server starts on `http://localhost:3000`. The frontend reads `VITE_API_URL` 
 
 ---
 
-### 🚗 Race — ~145/170 pts
+### 🚗 Race — ~162/170 pts
 
 - [x] **Start Engine Animation (20 pts):** Clicking "A" calls `PATCH /engine?status=started` to get velocity and distance, then fires `PATCH /engine?status=drive` concurrently with the CSS animation. Animation duration is calculated as `distance / velocity` ms. If drive returns HTTP 500 (car broke down), the car freezes at its current position.
 - [x] **Stop Engine Animation (20 pts):** Clicking "B" calls `PATCH /engine?status=stopped`, cancels the in-flight drive request via `AbortController`, and returns the car to its start position.
